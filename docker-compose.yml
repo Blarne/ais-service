@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  ais-service:
+      container_name: ais-microservice
+      image: karumien/ais-service:latest
+      ports:
+        - 2222:8080
+      restart: always
