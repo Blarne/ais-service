@@ -1,6 +1,6 @@
 FROM alpine/git as clone
 WORKDIR /app
-RUN git clone https://github.com/Karumien/adochazka
+RUN git clone https://github.com/Karumien/adochazka-client
 RUN git clone https://github.com/Karumien/ais-service
 
 FROM maven:3.5-jdk-8-alpine as build
