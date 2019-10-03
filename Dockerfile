@@ -1,8 +1,12 @@
 FROM alpine/git as clone
 WORKDIR /app
+RUN git clone https://github.com/Karumien/adochazka
 RUN git clone https://github.com/Karumien/ais-service
 
 FROM maven:3.5-jdk-8-alpine as build
+WORKDIR /adochazka
+COPY --from=clone /app/adochazka /adochazka
+RUN mvn install
 WORKDIR /app
 COPY --from=clone /app/ais-service /app
 RUN mvn install
