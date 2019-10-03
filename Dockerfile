@@ -5,7 +5,7 @@ RUN git clone https://github.com/Karumien/ais-service
 
 FROM maven:3.5-jdk-8-alpine as build
 WORKDIR /adochazka
-COPY --from=clone /app/adochazka /adochazka
+COPY --from=clone /app/adochazka-client /adochazka
 RUN mvn install
 WORKDIR /app
 COPY --from=clone /app/ais-service /app
